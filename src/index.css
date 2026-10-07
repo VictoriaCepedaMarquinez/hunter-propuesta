@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+  Identidad de Hunter Bar (Drink & Food) — tomada de su Instagram @hunterbartandil:
+  - Fondo negro con textura tipo pizarrón / grunge
+  - "HUNTER" en letra gruesa y condensada: blanca con una línea negra interior,
+    y el flamenco ("Hunting Bird") parado sobre la R
+  - Hojas tropicales en blanco y negro con íconos blancos de línea (sus historias destacadas)
+  - Rosa flamenco (por el "Hunting Bird") para etiquetas, botones y acentos
+  - Oswald para etiquetas y bajadas, Inter para el cuerpo
+*/
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Anton", "Bebas Neue", Impact, sans-serif;
+  --font-etiqueta: "Oswald", "Arial Narrow", sans-serif;
+
+  --color-noche: #0b0b0a;        /* fondo principal (negro de sus posteos) */
+  --color-noche-claro: #161514;  /* tarjetas / bloques sobre el negro */
+  --color-pizarra: #1f1e1c;      /* bordes y separadores */
+  --color-hueso: #ece6dc;        /* texto claro / contorno del logo */
+  --color-humo: #8c867d;         /* texto secundario */
+  --color-rosa: #f47fa6;         /* acento principal: rosa flamenco */
+  --color-rosa-oscuro: #e0628d;
+
+  --animate-marquesina: marquesina 35s linear infinite;
+
+  @keyframes marquesina {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-noche);
+    color: var(--color-hueso);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--color-rosa);
+    color: var(--color-noche);
+  }
+}
+
+@layer utilities {
+  /* Letra como el logo de Hunter: blanca, con una línea negra interior y borde blanco */
+  .texto-hunter {
+    color: var(--color-hueso);
+    -webkit-text-stroke: 0.035em var(--color-noche);
+    filter:
+      drop-shadow(0.04em 0 0 var(--color-hueso))
+      drop-shadow(-0.04em 0 0 var(--color-hueso))
+      drop-shadow(0 0.04em 0 var(--color-hueso))
+      drop-shadow(0 -0.04em 0 var(--color-hueso));
+  }
+
+  /* Textura grunge / pizarrón sobre el negro (ruido SVG, sin imágenes externas) */
+  .textura {
+    position: relative;
+    isolation: isolate;
+  }
+  .textura::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.09;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -0.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Desplazamiento de AOS más sutil (20px) para todo el sitio */
+[data-aos="fade-up"] {
+  transform: translateY(20px);
+}
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}

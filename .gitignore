@@ -1,0 +1,15 @@
+# Dependencias y build
+node_modules/
+dist/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Variables de entorno y Vercel
+.env*
+.vercel/
+
+# Varios
+.DS_Store
+*.log
