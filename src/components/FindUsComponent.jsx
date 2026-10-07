@@ -21,10 +21,10 @@ function DondeEncontrarnos() {
     <section id="ubicacion" className="bg-noche-claro textura py-16 md:py-28 px-6 border-t border-pizarra overflow-hidden scroll-mt-20">
       <div className="relative max-w-6xl mx-auto">
         <Hoja className="absolute -left-56 -top-24 w-[30rem] text-hueso opacity-[0.05] rotate-[30deg]" />
-        <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-16" data-aos="fade-up">
 
           {/* COLUMNA TEXTO E INFO */}
-          <div className="w-full lg:w-1/2 space-y-10" data-aos="fade-up">
+          <div className="w-full lg:w-1/2 space-y-10">
             <div className="space-y-4">
               <span className="inline-block rounded-full bg-rosa text-noche font-etiqueta uppercase tracking-[0.2em] text-xs px-3.5 py-1">Ubicación</span>
               <h2 className="font-display uppercase leading-[0.9] text-5xl md:text-6xl tracking-wide">
@@ -78,7 +78,7 @@ function DondeEncontrarnos() {
           </div>
 
           {/* COLUMNA MAPA */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end" data-aos="fade-up" data-aos-delay="150">
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-xl pr-3 md:pr-0">
               <div className="absolute -top-3 right-0 md:-top-4 md:-right-4 w-[calc(100%-0.75rem)] md:w-full h-full rounded-3xl border-2 border-rosa" aria-hidden="true" />
               <div className="relative h-[300px] md:h-[360px] rounded-3xl overflow-hidden shadow-2xl shadow-black/60 border border-pizarra">

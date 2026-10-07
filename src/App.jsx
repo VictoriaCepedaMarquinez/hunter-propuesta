@@ -12,10 +12,13 @@ function App() {
 
   // Inicializamos AOS una sola vez al cargar la aplicación
   useEffect(() => {
+    // Entradas cortas y suaves; se desactivan si el sistema pide reducir movimiento.
     AOS.init({
-      duration: 1000,
+      duration: 700,
       once: true,
-      easing: 'ease-out',
+      offset: 60,
+      easing: 'ease-out-cubic',
+      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
     });
   }, []);
 

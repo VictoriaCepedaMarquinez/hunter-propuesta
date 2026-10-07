@@ -6,7 +6,7 @@ function Footer() {
   const direccion = MARCA.direcciones[0];
 
   return (
-    <footer className="bg-noche textura text-hueso pt-16 pb-6 px-6 border-t-4 border-rosa overflow-hidden">
+    <footer className="bg-noche textura text-hueso pt-16 pb-6 px-6 border-t-2 md:border-t-4 border-rosa overflow-hidden">
       <div className="relative max-w-6xl mx-auto">
         <Hoja className="absolute -right-40 -top-24 w-[26rem] text-hueso opacity-[0.04] -rotate-[150deg]" />
       </div>

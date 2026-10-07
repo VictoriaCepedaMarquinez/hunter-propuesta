@@ -30,37 +30,28 @@ function AboutUs() {
         {/* CONTENIDO PRINCIPAL */}
         <div className="relative grid md:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-          {/* COLUMNA IMÁGENES */}
-          <div className="md:col-span-6 grid grid-cols-5 gap-4 lg:gap-6 relative z-10">
-            <div
-              className="col-span-3 aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative group border border-pizarra"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="1200"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop"
-                alt="Salón con plantas tropicales y lámparas"
-                className="w-full h-full object-cover brightness-[0.85] group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
-              />
-              <div className="absolute inset-0 bg-noche/20 group-hover:bg-transparent transition-colors duration-500"></div>
-            </div>
+          {/* COLUMNA IMÁGENES: fotos y marco rosa entran juntos, como un solo bloque */}
+          <div className="md:col-span-6 relative" data-aos="fade-up">
+            {/* Marco rosa decorativo, detrás de la foto grande */}
+            <div className="absolute -top-3 -left-3 w-20 h-20 md:-top-6 md:-left-6 md:w-36 md:h-36 rounded-2xl md:rounded-3xl border-2 border-rosa/60" aria-hidden="true"></div>
 
-            <div
-              className="col-span-2 aspect-square rounded-3xl overflow-hidden shadow-xl mt-16 md:mt-24 group border border-pizarra"
-              data-aos="fade-up"
-              data-aos-delay="250"
-              data-aos-duration="1200"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop"
-                alt="Amigos brindando en una mesa"
-                className="w-full h-full object-cover brightness-[0.85] group-hover:scale-110 transition-transform duration-[2000ms] ease-out"
-              />
-            </div>
+            <div className="relative grid grid-cols-5 gap-4 lg:gap-6">
+              <div className="col-span-3 aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-pizarra">
+                <img
+                  src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop"
+                  alt="Salón con plantas tropicales y lámparas"
+                  className="w-full h-full object-cover brightness-[0.85]"
+                />
+              </div>
 
-            {/* Decoración */}
-            <div className="absolute -top-6 -left-6 w-36 h-36 rounded-3xl border-2 border-rosa/60 -z-10"></div>
+              <div className="col-span-2 aspect-square rounded-3xl overflow-hidden shadow-xl mt-16 md:mt-24 border border-pizarra">
+                <img
+                  src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop"
+                  alt="Amigos brindando en una mesa"
+                  className="w-full h-full object-cover brightness-[0.85]"
+                />
+              </div>
+            </div>
           </div>
 
           {/* COLUMNA TEXTO */}
@@ -78,8 +69,8 @@ function AboutUs() {
             {/* Valores */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
               {VALORES.map((v, i) => (
-                <div key={v.titulo} className="flex gap-4 items-start group">
-                  <div className="w-10 h-10 flex-shrink-0 rounded-full border border-hueso/30 flex items-center justify-center text-hueso font-display text-xl transition-colors group-hover:bg-rosa group-hover:border-rosa group-hover:text-noche duration-300">
+                <div key={v.titulo} className="flex gap-4 items-start">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-full border border-hueso/30 flex items-center justify-center text-hueso font-display text-xl">
                     {i + 1}
                   </div>
                   <div>

@@ -90,8 +90,8 @@ function Carousel() {
           <img
             src={slide.url}
             alt={MARCA.nombreCompleto}
-            className={`w-full h-full object-cover brightness-[0.5] transition-transform duration-[7000ms] ease-out ${
-              indiceActual === index ? 'scale-110' : 'scale-100'
+            className={`w-full h-full object-cover brightness-[0.5] transition-transform duration-[6000ms] ease-out ${
+              indiceActual === index ? 'scale-105' : 'scale-100'
             }`}
           />
           {/* Degradado para dar profundidad y legibilidad al texto */}
@@ -103,8 +103,8 @@ function Carousel() {
       {DIAPOSITIVAS_BAR.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-8 transition-all duration-1000 z-10
-            ${indiceActual === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+          className={`absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-8 transition-opacity duration-700 z-10
+            ${indiceActual === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
           <p className="rounded-full bg-rosa text-noche font-etiqueta uppercase tracking-[0.25em] text-[11px] md:text-xs px-4 py-1.5 mb-6 md:mb-5">
             {MARCA.nombreCompleto} · {MARCA.ciudad}

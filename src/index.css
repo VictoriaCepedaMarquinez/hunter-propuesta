@@ -78,10 +78,23 @@
   }
 }
 
-/* Desplazamiento de AOS más sutil (20px) para todo el sitio */
+/* Desplazamiento de AOS más sutil (16px) para todo el sitio */
 [data-aos="fade-up"] {
-  transform: translateY(20px);
+  transform: translateY(16px);
 }
 [data-aos="fade-up"].aos-animate {
   transform: translateY(0);
+}
+
+/* Si el sistema pide reducir movimiento: sin marquesina ni transiciones largas */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquesina {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

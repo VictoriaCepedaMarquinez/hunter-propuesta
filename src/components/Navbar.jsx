@@ -26,11 +26,11 @@ function Navbar({ setPagina }) {
 
           <button
             type="button"
-            className="flex items-center gap-3 cursor-pointer group z-[60] relative w-fit"
+            className="flex items-center gap-3 cursor-pointer z-[60] relative w-fit"
             onClick={() => navegar('Home')}
             aria-label={`${MARCA.nombreCompleto} — inicio`}
           >
-            <Logo alto={46} className="flex-shrink-0 transition-transform duration-500 group-hover:-rotate-2" />
+            <Logo alto={46} className="flex-shrink-0" />
             <span className="hidden lg:block font-etiqueta text-humo text-[10px] uppercase tracking-[0.3em] leading-tight text-left border-l border-pizarra pl-3">
               Bar<br />{MARCA.bajada}
             </span>

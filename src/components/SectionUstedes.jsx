@@ -33,22 +33,20 @@ function SectionUstedes() {
           </a>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 md:gap-3">
-          {FOTOS.map((f, i) => (
+        <div data-aos="fade-up" className="grid grid-cols-3 gap-2 md:gap-3">
+          {FOTOS.map((f) => (
             <a
               key={f.url}
               href={MARCA.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-[4/5] rounded-xl md:rounded-2xl overflow-hidden bg-noche-claro"
-              data-aos="fade-up"
-              data-aos-delay={(i % 3) * 100}
             >
               <img
                 src={f.url}
                 alt={f.alt}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-noche/80 to-transparent" />
               <Logo alto={30} className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 w-auto h-4 sm:h-6 md:h-8" />
